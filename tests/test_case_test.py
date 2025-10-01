@@ -66,3 +66,16 @@ class TestCaseTest(TestCase):
     def test_template_method(self):
         spy = TestSpy("test_method"); spy.run(self.result)
         assert spy.log == "set_up test_method tear_down"
+    def test_assert_true(self):
+        self.assert_true(True)
+
+    def test_assert_false(self):
+        self.assert_false(False)
+
+    def test_assert_equal(self):
+        self.assert_equal("foo", "foo")
+        self.assert_equal([1, 2], [1, 2])
+
+    def test_assert_in(self):
+        self.assert_in("a", "abc")
+        self.assert_in(1, [1, 2, 3])
